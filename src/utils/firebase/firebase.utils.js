@@ -66,9 +66,6 @@ export const createUserDocumentFromAuth = async (userAuth, additionalInfo) => {
   if (!userAuth) return
 
   const userDocRef = doc(db, 'users', userAuth.uid)
-
-  console.log(userDocRef)
-
   const userShapshot = await getDoc(userDocRef)
 
   if (!userShapshot.exists()) {
@@ -99,9 +96,6 @@ export const createAuthUserWithEmailAndPassword = async (email, password) => {
 
 export const signInAuthUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return
-
-  console.log(email)
-  console.log(password)
 
   return await signInWithEmailAndPassword(auth, email, password)
 }
