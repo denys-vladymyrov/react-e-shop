@@ -4,7 +4,6 @@ import { createAction } from "../../utils/reducer/reducer.utils"
 
 // Utils
 const addCartItem = (cartItems, productToAdd) => {
-  debugger
   const existingCartItem = cartItems.find(
     (cartItem) => cartItem.id === productToAdd.id
   )
